@@ -6,8 +6,36 @@ EXAMPLE_DATA = {
     # ... (use your real device data here)
 }
 
-class MelcloudHeatPumpSensor(Entity):
-    def __init__(self, device: MelcloudHeatPump, field: str, name: str, unit: str = None):
+
+from homeassistant.core import HomeAssistant
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.helpers.entity import Entity
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from .models import MelcloudHeatPump
+from .coordinator import MelcloudCoordinator
+
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
+    coordinator: MelcloudCoordinator = hass.data["melcloud_heatpump"][entry.entry_id]
+    device_data = coordinator.data
+    device = MelcloudHeatPump(device_data)
+    sensors = []
+    fields = [
+        ("room_temperature_zone1", "Room Temperature Zone 1", "°C"),
+        ("outdoor_temperature", "Outdoor Temperature", "°C"),
+        ("flow_temperature", "Flow Temperature", "°C"),
+        ("return_temperature", "Return Temperature", "°C"),
+        ("tank_water_temperature", "Tank Water Temperature", "°C"),
+        ("power", "Power", None),
+        ("operation_mode", "Operation Mode", None),
+    ]
+    for field, name, unit in fields:
+        sensors.append(MelcloudHeatPumpSensor(coordinator, device, field, name, unit))
+    async_add_entities(sensors)
+
+class MelcloudHeatPumpSensor(CoordinatorEntity, Entity):
+    def __init__(self, coordinator, device: MelcloudHeatPump, field: str, name: str, unit: str = None):
+        super().__init__(coordinator)
         self._device = device
         self._field = field
         self._name = name
