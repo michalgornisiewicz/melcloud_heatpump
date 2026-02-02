@@ -21,6 +21,32 @@ class MelcloudCoordinator(DataUpdateCoordinator):
         return {
             "Device": {
                 "DeviceType": 1,
-                # ... add all required fields here ...
+                "DefrostMode": None,
+                "HeatPumpFrequency": None,
+                "RoomTemperatureZone1": None,
+                "OutdoorTemperature": None,
+                "FlowTemperature": None,
+                "FlowTemperatureZone1": None,
+                "FlowTemperatureBoiler": None,
+                "ReturnTemperature": None,
+                "ReturnTemperatureZone1": None,
+                "ReturnTemperatureBoiler": None,
+                "BoilerStatus": None,
+                "BoosterHeater1Status": None,
+                "BoosterHeater2Status": None,
+                "BoosterHeater2PlusStatus": None,
+                "ImmersionHeaterStatus": None,
+                "WaterPump1Status": None,
+                "WaterPump2Status": None,
+                "WaterPump3Status": None,
+                "TankWaterTemperature": None,
+                "EcoHotWater": None,
+                "Power": None,
+                "OperationMode": None,
+                "OperationModeZone1": None,
+                "TargetHCTemperatureZone1": None,
+                "ForcedHotWaterMode": None,
+                "ProhibitHotWater": None,
+                "CurrentEnergyMode": None,
             }
         }
