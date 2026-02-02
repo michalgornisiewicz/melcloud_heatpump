@@ -1,7 +1,5 @@
 {
   "name": "MELCloud Heat Pump",
-  "content_in_root": false,
-  "country": "any",
-  "domains": ["melcloud_heatpump"],
-  "homeassistant": "2023.0.0"
+  "homeassistant": "2024.8.0",
+  "persistent_directory": "storage"
 }
