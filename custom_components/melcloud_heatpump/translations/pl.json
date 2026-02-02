@@ -1,0 +1,22 @@
+{
+  "title": "Pompa ciepła MELCloud",
+  "config": {
+    "step": {
+      "user": {
+        "description": "Skonfiguruj integrację MELCloud Heat Pump.",
+        "data": {
+          "username": "Nazwa użytkownika MELCloud",
+          "password": "Hasło MELCloud",
+          "device_id": "ID urządzenia"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "MELCloud Heat Pump",
+  "config": {
+    "step": {
+      "user": {
+        "description": "Set up your MELCloud Heat Pump integration.",
+        "data": {
+          "username": "MELCloud Username",
+          "password": "MELCloud Password",
+          "device_id": "Device ID"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options"
+      }
+    }
+  }
+}
