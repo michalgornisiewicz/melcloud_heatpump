@@ -2,9 +2,10 @@
   "domain": "melcloud_heatpump",
   "name": "MELCloud Heat Pump",
   "version": "0.1.0",
-  "documentation": "https://github.com/yourusername/melcloud_heatpump",
+  "documentation": "https://github.com/michalgornisiewicz/melcloud_heatpump",
+  "issue_tracker": "https://github.com/michalgornisiewicz/melcloud_heatpump/issues",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@yourusername"],
+  "codeowners": ["@michalgornisiewicz"],
   "iot_class": "cloud_polling"
 }
